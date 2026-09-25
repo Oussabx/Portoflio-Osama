@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Portfolio Admin</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="admin.css" />
+<script>
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body class="admin">
+
+<header class="admin-bar">
+  <div class="admin-bar-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true" id="adminInitials">O</span>
+      <span class="brand-text">Portfolio Admin</span>
+    </div>
+    <div class="admin-actions">
+      <span class="save-status" id="saveStatus" role="status"></span>
+      <a class="btn btn-ghost btn-sm" href="index.html" target="_blank">View site ↗</a>
+      <button class="btn btn-primary btn-sm" id="saveBtn" type="button">Save changes</button>
+    </div>
+  </div>
+</header>
+
+<div class="banner" id="draftBanner" hidden>
+  <span>You have unsaved edits from last time.</span>
+  <button class="btn btn-sm btn-primary" id="restoreDraft" type="button">Restore them</button>
+  <button class="btn btn-sm btn-ghost" id="discardDraft" type="button">Discard</button>
+</div>
+
+<div class="admin-layout">
+  <nav class="admin-tabs" role="tablist" aria-label="Sections">
+    <button role="tab" class="tab is-active" data-tab="projects" aria-selected="true">Projects</button>
+    <button role="tab" class="tab" data-tab="profile" aria-selected="false">Profile &amp; hero</button>
+    <button role="tab" class="tab" data-tab="about" aria-selected="false">About &amp; skills</button>
+    <button role="tab" class="tab" data-tab="contact" aria-selected="false">Contact &amp; messages</button>
+  </nav>
+
+  <main class="admin-main">
+    <section class="panel" id="panel-projects" role="tabpanel"></section>
+    <section class="panel" id="panel-profile" role="tabpanel" hidden></section>
+    <section class="panel" id="panel-about" role="tabpanel" hidden></section>
+    <section class="panel" id="panel-contact" role="tabpanel" hidden></section>
+  </main>
+</div>
+
+<dialog class="save-help" id="saveHelp">
+  <h2>Almost done</h2>
+  <p>Your browser downloaded a file called <strong>data.js</strong>.</p>
+  <p>Move it into your portfolio's <strong>content</strong> folder and replace the old <code>data.js</code>. Then refresh the site to see your changes.</p>
+  <p class="muted">Tip: in Chrome or Edge, Save writes the file directly, with no download step.</p>
+  <form method="dialog"><button class="btn btn-primary btn-sm">Got it</button></form>
+</dialog>
+
+<script src="content/data.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
