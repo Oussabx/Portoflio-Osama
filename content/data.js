@@ -57,9 +57,10 @@ window.PORTFOLIO = {
       ]
     },
     "contact": {
-      "heading": "Let's build something great together.",
+      "heading": "*Let's Build* Something Great Together",
       "text": "Have a project, a role, or just a question? My inbox is always open — I usually reply within a day.",
       "email": "you@example.com",
+      "phone": "",
       "formEndpoint": "",
       "socials": [
         {
@@ -79,7 +80,13 @@ window.PORTFOLIO = {
           "url": "https://www.behance.net/"
         }
       ]
-    }
+    },
+    "services": [
+      "UI/UX Design",
+      "User Research",
+      "Design Systems",
+      "Front-End Development"
+    ]
   },
   "projects": [
     {

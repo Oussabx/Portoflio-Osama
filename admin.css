@@ -17,7 +17,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 
 .admin-layout { max-width: 1120px; margin: 0 auto; padding: 24px 16px 80px; display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
 .admin-tabs { display: grid; gap: 4px; position: sticky; top: 84px; }
-.tab { text-align: left; padding: 12px 14px; border: 0; border-radius: 10px; background: transparent; color: var(--text-muted); font: 500 15px/1.2 'Inter', sans-serif; cursor: pointer; }
+.tab { text-align: left; padding: 12px 14px; border: 0; border-radius: 10px; background: transparent; color: var(--text-muted); font: 500 15px/1.2 'Plus Jakarta Sans', sans-serif; cursor: pointer; }
 .tab:hover { color: var(--text); background: var(--surface); }
 .tab.is-active { background: var(--surface); color: var(--text); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 @media (max-width: 760px) {
@@ -39,7 +39,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .fld > span { font-size: 13px; font-weight: 600; }
 .fld small { color: var(--text-muted); font-size: 12px; }
 .fld input[type=text], .fld input[type=email], .fld input[type=url], .fld textarea, .row input {
-  width: 100%; padding: 10px 12px; font: 400 15px/1.5 'Inter', sans-serif; color: var(--text);
+  width: 100%; padding: 10px 12px; font: 400 15px/1.5 'Plus Jakarta Sans', sans-serif; color: var(--text);
   background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
 }
 .fld textarea { resize: vertical; min-height: 80px; }
@@ -53,7 +53,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .icon { width: 36px; height: 36px; flex: none; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text-muted); cursor: pointer; font-size: 16px; }
 .icon:hover { color: var(--text); border-color: var(--text); }
 .icon.del:hover { color: var(--danger); border-color: var(--danger); }
-.add { background: none; border: 1px dashed var(--border); border-radius: 10px; padding: 10px; width: 100%; color: var(--text-muted); cursor: pointer; font: 500 14px 'Inter', sans-serif; }
+.add { background: none; border: 1px dashed var(--border); border-radius: 10px; padding: 10px; width: 100%; color: var(--text-muted); cursor: pointer; font: 500 14px 'Plus Jakarta Sans', sans-serif; }
 .add:hover { color: var(--accent); border-color: var(--accent); }
 
 .image-field { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
@@ -88,3 +88,15 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   .project-summary-row .info strong { white-space: normal; }
   .project-summary-row .icon:nth-child(3) { margin-left: auto; }
 }
+
+/* Admin buttons (the site's pill buttons carry an icon; these are plain) */
+.admin .btn { padding: 10px 18px; gap: 8px; box-shadow: none; font-size: 14px; }
+.admin .btn:hover { transform: translateY(-1px); box-shadow: none; }
+.admin .btn-primary { --btn-bg: var(--orange); --btn-fg: #fff; }
+.admin .btn-primary:hover { background: var(--orange-2); }
+.admin .btn-ghost { --btn-bg: transparent; --btn-fg: var(--text); border: 1px solid var(--line); }
+.admin .btn-ghost:hover { border-color: rgba(255,255,255,.35); }
+.admin .btn-danger { --btn-bg: transparent; --btn-fg: var(--danger); border: 1px solid var(--line); }
+.admin .brand-text { font-weight: 800; font-size: 18px; letter-spacing: -.02em; }
+.admin .fld input[type=text], .admin .fld input[type=email], .admin .fld input[type=url], .admin .fld textarea, .admin .row input { background: #0e0e0e; }
+.admin .tab.is-active { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--orange); }

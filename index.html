@@ -4,127 +4,107 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Osama — UI/UX Designer & Front-End Developer</title>
-<meta name="description" content="Portfolio of Osama: UI/UX design and front-end development — research-led interfaces, design systems and fast, accessible websites." />
+<meta name="description" content="Portfolio of Osama: UI/UX design and front-end development." />
 <meta property="og:title" content="Osama — UI/UX Designer & Front-End Developer" />
-<meta property="og:description" content="Research-led interfaces, design systems and fast, accessible websites." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/og-image.svg" />
+<meta name="theme-color" content="#0a0a0a" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<script>
-  // Apply saved theme before paint to avoid a flash.
-  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-</script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
 
-<header class="site-header" id="header">
-  <div class="container header-inner">
-    <a href="#top" class="brand" aria-label="Home">
-      <span class="brand-mark" aria-hidden="true" data-field="initials">O</span>
-      <span class="brand-text" data-field="name">Osama</span>
-    </a>
-    <nav class="nav" id="nav" aria-label="Primary">
+<!-- Shared arrow icon -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav" id="header">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="brand-mark" data-field="initials">O</span><span data-field="name">Osama</span></a>
+    <nav class="nav-links" id="nav" aria-label="Primary">
+      <a href="#top">Home</a>
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
+      <a class="btn btn--sm nav-menu-cta" href="#contact"><span class="btn-icon"><svg><use href="#i-arrow"/></svg></span><span>Get in touch</span></a>
     </nav>
-    <div class="header-actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
-      </button>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span>
-      </button>
-    </div>
+    <a class="btn btn--sm btn--light nav-cta" href="#contact"><span class="btn-icon"><svg><use href="#i-arrow"/></svg></span><span>Get in touch</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="container hero-inner">
-      <p class="eyebrow reveal" id="availability"><span class="status-dot" aria-hidden="true"></span> <span data-field="hero.availability">Available for freelance &amp; full-time roles</span></p>
-      <h1 class="hero-title reveal" data-field="hero.headline" data-format="emphasis">
-        I design interfaces people <em>enjoy</em> using — and build them, too.
-      </h1>
-      <p class="hero-lead reveal" data-field="hero.lead">
-        UI/UX designer &amp; front-end developer turning research and rough ideas into clear,
-        accessible, fast products. From first sketch in Figma to production code.
-      </p>
-      <div class="hero-cta reveal">
-        <a class="btn btn-primary" href="#work">View my work
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+  <section class="hero-wrap" id="top">
+    <div class="hero">
+      <div class="hero-glow" data-speed="-0.15" aria-hidden="true"></div>
+      <div class="hero-3d" id="hero3d" data-speed="0.18" aria-hidden="true">
+        <div class="orb-fallback"><span></span></div>
       </div>
-      <ul class="hero-stats reveal" id="heroStats" aria-label="Highlights">
-        <li><strong>5+</strong><span>Shipped projects</span></li>
-        <li><strong>Design → Code</strong><span>End-to-end ownership</span></li>
-        <li><strong>100</strong><span>Lighthouse accessibility</span></li>
-      </ul>
+
+      <div class="hero-content" data-speed="-0.08">
+        <p class="hero-hello reveal">Hey, I'm <span data-field="name">Osama</span></p>
+        <h1 class="hero-title reveal" data-field="title">UI/UX Designer &amp; Front-End Developer</h1>
+      </div>
+
+      <div class="hero-side reveal" data-speed="-0.04">
+        <p class="hero-availability" id="availability"><span class="dot" aria-hidden="true"></span><span data-field="hero.availability">Available for work</span></p>
+        <p class="hero-tagline" data-field="hero.headline" data-format="emphasis">I design interfaces people enjoy using.</p>
+        <p class="hero-lead" data-field="hero.lead"></p>
+        <a class="btn" href="#work"><span class="btn-icon"><svg><use href="#i-arrow"/></svg></span><span>View my work</span></a>
+      </div>
+
+      <ul class="services reveal" id="services" aria-label="What I do"></ul>
     </div>
-    <div class="hero-grid" aria-hidden="true"></div>
+  </section>
+
+  <!-- TOOLS MARQUEE -->
+  <section class="tools-wrap" aria-label="Tools">
+    <div class="tools">
+      <p class="tools-label">Tools I design<br />&amp; build with</p>
+      <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+    </div>
   </section>
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <div class="container about">
-      <div class="about-media reveal">
-        <div class="avatar" id="avatar" role="img" aria-label="Portrait of Osama">
-          <span data-field="initials">O</span>
+    <div class="container">
+      <div class="about">
+        <div class="about-left">
+          <p class="kicker reveal">Behind the designs</p>
+          <h2 class="h2 reveal" data-field="about.heading">Designer by training, developer by curiosity.</h2>
         </div>
-      </div>
-      <div class="about-body">
-        <p class="section-kicker reveal">About</p>
-        <h2 class="section-title reveal" data-field="about.heading">Designer by training, developer by curiosity.</h2>
-        <div class="about-text reveal" id="aboutText">
-        <p>
-          I'm Osama, a UI/UX designer and front-end developer based in Your City. I care about
-          the whole journey: understanding users, mapping flows, crafting pixel-level UI, and
-          shipping it as clean, responsive code.
-        </p>
-        <p>
-          My process is simple — listen, prototype early, test with real people, and iterate until
-          the interface feels obvious.
-        </p>
-
-        </div>
-
-        <div class="skills reveal" id="skills">
-          <div class="skill-group">
-            <h3>Design</h3>
-            <ul class="chips">
-              <li>Figma</li><li>User research</li><li>Wireframing</li><li>Prototyping</li>
-              <li>Design systems</li><li>Usability testing</li>
-            </ul>
-          </div>
-          <div class="skill-group">
-            <h3>Development</h3>
-            <ul class="chips">
-              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
-              <li>Responsive design</li><li>Accessibility</li>
-            </ul>
+        <div class="about-right">
+          <div class="about-text reveal" id="aboutText"></div>
+          <div class="about-cta reveal">
+            <span class="muted-sm">Let's build something<br />meaningful together</span>
+            <a class="btn" href="#contact"><span class="btn-icon"><svg><use href="#i-arrow"/></svg></span><span>Get in touch</span></a>
           </div>
         </div>
       </div>
+
+      <div class="about-media reveal" id="aboutMedia" hidden></div>
+
+      <ul class="stats" id="heroStats" aria-label="Highlights"></ul>
     </div>
   </section>
 
   <!-- WORK -->
-  <section class="section section-alt" id="work">
+  <section class="section" id="work">
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="section-kicker reveal">Selected work</p>
-          <h2 class="section-title reveal">Projects</h2>
+          <p class="kicker reveal">Selected work</p>
+          <h2 class="h2 reveal">Projects that<br />shaped my craft</h2>
         </div>
         <div class="filters reveal" role="group" aria-label="Filter projects">
           <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
@@ -136,37 +116,57 @@
     </div>
   </section>
 
+  <!-- ARC CTA -->
+  <section class="arc-section" id="arc" aria-label="Call to action">
+    <div class="arc-stage" aria-hidden="true"><div class="arc-ring" id="arcRing"></div></div>
+    <div class="arc-content">
+      <h2 class="arc-title reveal">Let's create something<br />exceptional</h2>
+      <p class="arc-text reveal">A bold product, a clean interface or a fast website. Tell me what you're building.</p>
+      <a class="btn reveal" href="#contact"><span class="btn-icon"><svg><use href="#i-arrow"/></svg></span><span>Contact me</span></a>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section class="section" id="contact">
+  <section class="section contact-section" id="contact">
     <div class="container contact">
       <div class="contact-intro">
-        <p class="section-kicker reveal">Contact</p>
-        <h2 class="section-title reveal" data-field="contact.heading">Let's build something great together.</h2>
-        <p class="reveal" data-field="contact.text">Have a project, a role, or just a question? My inbox is always open — I usually reply within a day.</p>
-        <a class="contact-email reveal" id="contactEmail" href="mailto:you@example.com">you@example.com</a>
-        <ul class="socials reveal" id="socials">
-          <li><a href="https://github.com/oussabx" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://dribbble.com/" target="_blank" rel="noopener">Dribbble</a></li>
-          <li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a></li>
+        <p class="kicker kicker--plain reveal">I'm here to help you</p>
+        <h2 class="contact-title reveal" data-field="contact.heading" data-format="emphasis">Let's build something great together.</h2>
+        <p class="contact-text reveal" data-field="contact.text"></p>
+
+        <ul class="contact-lines reveal">
+          <li>
+            <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11zm1.8.3 7.2 5.4 7.2-5.4" fill="currentColor" stroke="#0a0a0a" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+            <span><small>E-mail</small><a id="contactEmail" href="mailto:you@example.com">you@example.com</a></span>
+            <button class="copy-btn" id="copyEmail" type="button" aria-label="Copy email">Copy</button>
+          </li>
+          <li id="phoneLine" hidden>
+            <span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1l-2.2 2.2z" fill="currentColor"/></svg></span>
+            <span><small>Phone number</small><a id="contactPhone" href="#"></a></span>
+          </li>
         </ul>
+
+        <ul class="socials reveal" id="socials"></ul>
       </div>
 
-      <form class="contact-form reveal" id="contactForm" novalidate>
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required />
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-        </div>
+      <form class="contact-card reveal" id="contactForm" novalidate>
+        <label class="field"><span>Name</span><input id="name" name="name" type="text" placeholder="Jane Smith" autocomplete="name" required /></label>
+        <label class="field"><span>Email</span><input id="email" name="email" type="email" placeholder="jane@company.com" autocomplete="email" required /></label>
+        <label class="field"><span>Project type</span>
+          <span class="select">
+            <select id="projectType" name="projectType">
+              <option value="">Select…</option>
+              <option>UI/UX design</option>
+              <option>Website</option>
+              <option>Web app</option>
+              <option>Design system</option>
+              <option>Something else</option>
+            </select>
+          </span>
+        </label>
         <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Send message</button>
+        <label class="field"><span>Message</span><textarea id="message" name="message" rows="4" placeholder="Type your message" required></textarea></label>
+        <button class="btn" type="submit"><span class="btn-icon"><svg><use href="#i-arrow"/></svg></span><span>Send message</span></button>
         <p class="form-note" id="formNote" role="status"></p>
       </form>
     </div>
@@ -174,14 +174,16 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="footer">
   <div class="container footer-inner">
     <p>© <span id="year"></span> <span data-field="name">Osama</span>. Designed &amp; built by me.</p>
-    <a href="#top">Back to top ↑</a>
+    <a href="#top" class="to-top">Back to top ↑</a>
   </div>
 </footer>
 
 <script src="content/data.js"></script>
 <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js" defer></script>
+<script src="hero3d.js" defer></script>
 </body>
 </html>

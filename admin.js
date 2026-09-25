@@ -346,7 +346,17 @@
     panel.appendChild(panelHead('Profile & hero', 'Your name and the first thing visitors see.'));
     panel.appendChild(card('You', [
       h('div', { class: 'grid-2' }, [field('Name', s, 'name'), field('Initials (logo)', s, 'initials', { hint: '1–2 letters' })]),
-      field('Job title', s, 'title')
+      field('Job title', s, 'title'),
+      h('label', { class: 'fld' }, [
+        h('span', { text: 'What I do (shown as #01–#04 in the hero)' }),
+        (function () {
+          var input = h('input', { type: 'text', placeholder: 'UI/UX Design, User Research, Design Systems, Front-End Development' });
+          input.value = csv(s.services);
+          input.addEventListener('input', function () { s.services = uncsv(input.value); changed(); });
+          return input;
+        })(),
+        h('small', { text: 'Up to 4, separated by commas.' })
+      ])
     ]));
     panel.appendChild(card('Hero', [
       checkbox('Show availability badge', function () { return hero.showAvailability !== false; }, function (on) { hero.showAvailability = on; }),
@@ -392,9 +402,10 @@
     panel.innerHTML = '';
     panel.appendChild(panelHead('Contact & messages', 'How people reach you.'));
     panel.appendChild(card('Contact section', [
-      field('Heading', c, 'heading'),
+      field('Heading', c, 'heading', { hint: 'Wrap words in *asterisks* to make them bold.' }),
       field('Text', c, 'text', { multiline: true, rows: 2 }),
       field('Email', c, 'email', { type: 'email' }),
+      field('Phone (optional)', c, 'phone', { placeholder: '+961 …' }),
       h('div', { class: 'fld' }, [h('span', { text: 'Social links' }), rowList(c.socials, [
         { key: 'label', placeholder: 'Label (e.g. LinkedIn)' },
         { key: 'url', placeholder: 'https://…' }
