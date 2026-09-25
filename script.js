@@ -60,6 +60,16 @@
 
   var hero = site.hero || {};
   document.getElementById('availability').hidden = hero.showAvailability === false;
+  if (hero.photo) document.getElementById('heroPortrait').src = hero.photo;
+
+  // Portrait leans toward the mouse a little.
+  var heroVisual = document.querySelector('.hero-visual');
+  if (finePointer && !reduceMotion && heroVisual) {
+    window.addEventListener('pointermove', function (e) {
+      heroVisual.style.setProperty('--mx', ((e.clientX / window.innerWidth) * 2 - 1).toFixed(3));
+      heroVisual.style.setProperty('--my', ((e.clientY / window.innerHeight) * 2 - 1).toFixed(3));
+    }, { passive: true });
+  }
 
   var services = (site.services && site.services.length ? site.services : allSkills()).slice(0, 4);
   fill(document.getElementById('services'), services, function (s, i) {

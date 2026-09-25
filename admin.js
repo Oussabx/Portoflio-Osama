@@ -359,6 +359,7 @@
       ])
     ]));
     panel.appendChild(card('Hero', [
+      imageField('Hero photo (use a PNG/WebP with no background)', hero, 'photo', { maxWidth: 1000, hint: 'Leave empty to use assets/osama.webp.' }),
       checkbox('Show availability badge', function () { return hero.showAvailability !== false; }, function (on) { hero.showAvailability = on; }),
       field('Availability text', hero, 'availability'),
       field('Headline', hero, 'headline', { multiline: true, rows: 2, hint: 'Wrap a word in *asterisks* to highlight it in colour.' }),
